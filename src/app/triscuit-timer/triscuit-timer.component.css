@@ -1,0 +1,20 @@
+.triscuit-blue{
+   font-weight: bold;
+   color: #3569AB;
+   font-size: 25px;
+}
+
+.triscuit-yellow{
+   background-color: #F3DA57;
+   color: #000;
+   font-size: 25px;
+   border-radius: 10px;
+}
+
+.row {
+   margin-bottom: 5px;
+}
+
+.img-fluid { max-width: 100%; height: auto; } 
+
+

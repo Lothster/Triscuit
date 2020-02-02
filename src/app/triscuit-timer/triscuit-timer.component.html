@@ -1,0 +1,95 @@
+<div
+  class="container col-3 d-flex justify-content-center"
+  style="z-index: 0; "
+>
+    <img src="assets/img/triscuit-logo.png" class="img-fluid center-block" />
+</div>
+<div
+  class="container"
+  style="max-width: 300px; border-radius: 10px; background-color:whitesmoke; overflow:hidden "
+>
+  <div class="row" style="background-color:whitesmoke; margin-top: 15px;">
+    <div class="d-flex justify-content-center col-12">
+      <div class="col-6 col-sm-6 triscuit-blue">
+        reps left:
+      </div>
+      <div class="col-6 col-sm-6 triscuit-yellow">
+        <strong>{{ reps }}</strong>
+      </div>
+    </div>
+  </div>
+  <div class="row" style="background-color:whitesmoke">
+    <div class="d-flex justify-content-center col-12">
+      <div class="col-6 col-sm-6 triscuit-blue">
+        rep time:
+      </div>
+      <div class="col-6  col-sm-6 left-text triscuit-yellow">
+        <strong>
+          <countdown
+            #cdRepTime
+            [config]="{
+              leftTime: reptime,
+              format: 'ss.S',
+              demand: false,
+              notify: [1]
+            }"
+            (event)="handleNextRep($event)"
+          >
+          </countdown>
+        </strong>
+      </div>
+    </div>
+  </div>
+  <div class="row" style="background-color:whitesmoke">
+    <div class="d-flex justify-content-center col-12">
+      <div class="col-6 col-sm-6 triscuit-blue">
+        remaining:
+      </div>
+      <div class="col-6 col-sm-6 text-left triscuit-yellow">
+        <strong
+          ><countdown
+            #cdTimeRemaining
+            [config]="{
+              leftTime: timeleft,
+              format: 'm:ss',
+              demand: false
+            }"
+          ></countdown
+        ></strong>
+      </div>
+    </div>
+  </div>
+  <div class="row" style="background-color:whitesmoke">
+    <div class="d-flex justify-content-center col-12">
+      <div class="col-1 text-left ">
+        <!--  <button
+          class="btn btn-primary"
+          (click)="cdTimeRemaining.begin(); cdRepTime.begin()"
+        >
+          begin
+        </button> -->
+      </div>
+    </div>
+  </div>
+</div>
+
+<ng-template #mymodal let-modal>
+  <div class="modal-header triscuit-blue">
+    <h4 class="modal-title" id="modal-basic-title"><div class="col">
+      <img src="assets/img/munchies-logo.webp" class="img-fluid" />
+    </div></h4>
+  </div>
+  <div class="modal-body">
+    <div class="container triscuit-blue">
+      <h1>Exercise complete!</h1>
+      <h3>Now relax and treat yourself!</h3>
+      <div class="col" style="max-height: 200px; overflow:hidden">
+        <img src="assets/img/fireball.png" class="img-fluid" />
+      </div>
+      
+    </div>
+  </div>
+  <div class="modal-footer triscuit-blue">
+    {{ quoteString }}
+  </div>
+</ng-template>
